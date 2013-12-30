@@ -19,8 +19,8 @@ feature 'Create contact inquiry' do
     fill_in 'Email', with: 'jsmith@gmail.com'
     fill_in 'Subject', with: 'awesomeness'
     fill_in 'Description', with: 'here is some happy text'
-    fill_in 'First Name', with: 'John'
-    fill_in 'Last Name', with: 'Smith'
+    fill_in 'First name', with: 'John'
+    fill_in 'Last name', with: 'Smith'
 
     click_on 'Create Contact'
     expect(page).to have_content 'Contact was successfully created'
