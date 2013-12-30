@@ -26,4 +26,15 @@ feature 'Create contact inquiry' do
     expect(page).to have_content 'Contact was successfully created'
   end
 
+  it 'requires all fields to be completed' do
+    visit '/contacts/new'
+    click_on 'Create Contact'
+    save_and_open_page
+
+    expect(page).to have_content "Email can't be blank"
+    expect(page).to have_content "Subject can't be blank"
+    expect(page).to have_content "Description can't be blank"
+    expect(page).to have_content "First name can't be blank"
+    expect(page).to have_content "Last name can't be blank"
+  end
 end
